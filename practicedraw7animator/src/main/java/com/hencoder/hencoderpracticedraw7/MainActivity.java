@@ -1,4 +1,4 @@
-package com.hencoder.hencoderpracticedraw5;
+package com.hencoder.hencoderpracticedraw7;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -19,22 +19,18 @@ public class MainActivity extends AppCompatActivity {
     List<PageModel> pageModels = new ArrayList<>();
 
     {
-//        onDraw()-后插  在 super.onDraw()下方插入绘制代码，让绘制的内容盖住原主体内容
-        pageModels.add(new PageModel(R.layout.sample_after_on_draw, R.string.title_after_on_draw, R.layout.practice_after_on_draw));
-//        onDraw()-前插  把下面的绘制代码移到 super.onDraw() 的上面，就可以让原主体内容盖住你的绘制代码了
-        pageModels.add(new PageModel(R.layout.sample_before_on_draw, R.string.title_before_on_draw, R.layout.practice_before_on_draw));
-//        onDraw()-在 Layout 中
-        pageModels.add(new PageModel(R.layout.sample_on_draw_layout, R.string.title_on_draw_layout, R.layout.practice_on_draw_layout));
-//        dispatchDraw()
-        pageModels.add(new PageModel(R.layout.sample_dispatch_draw, R.string.title_dispatch_draw, R.layout.practice_dispatch_draw));
-//        onDrawForeground()-后插
-        pageModels.add(new PageModel(R.layout.sample_after_on_draw_foreground, R.string.title_after_on_draw_foreground, R.layout.practice_after_on_draw_foreground));
-//        onDrawForeground()-前插
-        pageModels.add(new PageModel(R.layout.sample_before_on_draw_foreground, R.string.title_before_on_draw_foreground, R.layout.practice_before_on_draw_foreground));
-//        draw()-后插
-        pageModels.add(new PageModel(R.layout.sample_after_draw, R.string.title_after_draw, R.layout.practice_after_draw));
-//        draw()-前插
-        pageModels.add(new PageModel(R.layout.sample_before_draw, R.string.title_before_draw, R.layout.practice_before_draw));
+//        ArgbEvaluator     求值器  动画完成度，求出对应的实际的属性值  更改颜色时 ArgbEvaluator
+        pageModels.add(new PageModel(R.layout.sample_argb_evaluator, R.string.title_argb_evaluator, R.layout.practice_argb_evaluator));
+//        自定义求值器--颜色渐变
+        pageModels.add(new PageModel(R.layout.sample_hsv_evaluator, R.string.title_hsv_evaluator, R.layout.practice_hsv_evaluator));
+//        自定义求值器--点的运动轨迹
+        pageModels.add(new PageModel(R.layout.sample_of_object, R.string.title_of_object, R.layout.practice_of_object));
+//        PropertyValuesHolder 同一个动画中改变多个属性
+        pageModels.add(new PageModel(R.layout.sample_property_values_holder, R.string.title_property_values_holder, R.layout.practice_property_values_holder));
+//        AnimatorSet 多个动画配合执行
+        pageModels.add(new PageModel(R.layout.sample_animator_set, R.string.title_animator_set, R.layout.practice_animator_set));
+//        PropertyValuesHolders.ofKeyframe() 把同一个属性拆分
+        pageModels.add(new PageModel(R.layout.sample_keyframe, R.string.title_keyframe, R.layout.practice_keyframe));
     }
 
     @Override

@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.support.v7.widget.AppCompatTextView;
+import android.text.Layout;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -35,6 +37,22 @@ public class Practice02BeforeOnDrawView extends AppCompatTextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+
+        // 把下面的绘制代码移到 super.onDraw() 的上面，就可以让原主体内容盖住你的绘制代码了
+        /*先画背景  再绘制主题的TextView*/
+
+        Layout layout = getLayout();
+        bounds.left = layout.getLineLeft(1);
+        bounds.right = layout.getLineRight(1);
+        bounds.top = layout.getLineTop(1);
+        bounds.bottom = layout.getLineBottom(1);
+        canvas.drawRect(bounds, paint);
+        Log.e("BeforeOnDrawView", "---" + layout.getLineCount());
+        bounds.left = layout.getLineLeft(layout.getLineCount() - 3);
+        bounds.right = layout.getLineRight(layout.getLineCount() - 3);
+        bounds.top = layout.getLineTop(layout.getLineCount() - 3);
+        bounds.bottom = layout.getLineBottom(layout.getLineCount() - 3);
+        canvas.drawRect(bounds, paint);
         super.onDraw(canvas);
 
 

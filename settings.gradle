@@ -1,1 +1,1 @@
-include ':app', ':practicedraw1', ':practicedraw2paint', ':practicedraw3drawtext', ':practicedraw4canvas', ':practicedraw5draworder'
+include ':app', ':practicedraw1', ':practicedraw2paint', ':practicedraw3drawtext', ':practicedraw4canvas', ':practicedraw5draworder', ':practicedraw6animator', ':practicedraw7animator'
